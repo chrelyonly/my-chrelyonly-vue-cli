@@ -1,5 +1,5 @@
-import { fileURLToPath, URL } from 'node:url'
-
+// import { fileURLToPath, URL } from 'node:url'
+import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -8,7 +8,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import setupExtend from 'vite-plugin-vue-setup-extend'
-// import compression from 'vite-plugin-compression'
 // https://vite.dev/config/
 export default defineConfig({
 
@@ -33,18 +32,17 @@ export default defineConfig({
       ],
     }),
     setupExtend(),
-    // compression()
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': path.resolve(__dirname, 'src')
     },
   },
   server: {
-    https: {
-      key: './server.key',
-      cert: './server.pem',
-    },
+    // https: {
+    //   key: './server.key',
+    //   cert: './server.pem',
+    // },
     // port: 2888,
     proxy: {
       '/api/': {

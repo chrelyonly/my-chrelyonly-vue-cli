@@ -30,7 +30,7 @@ app.component('basicBlock', basicBlock)
 import "@/util/datePrototype"
 // 引入全局通用请求
 import {http} from '@/util/https.js';
-app.config.globalProperties.$https = http;
+window.$https = http;
 // 自定义结束 ************************************************************
 app.use(createPinia())
 app.use(router)
