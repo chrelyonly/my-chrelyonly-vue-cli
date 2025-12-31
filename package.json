@@ -8,10 +8,7 @@
     "dev": "vite",
     "init": "pnpm install",
     "build": "vite build",
-    "preview": "vite preview",
-    "test:unit": "vitest",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.2",
